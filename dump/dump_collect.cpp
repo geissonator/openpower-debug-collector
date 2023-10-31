@@ -214,12 +214,12 @@ void collectDump(const uint8_t type, const uint32_t id,
                 // Create PEL only for valid SBE reported failures
                 if (errType == openpower::phal::exception::SBE_CMD_FAILED)
                 {
-                    //log<level::ERR>(
-                    //    std::format("Stop instructions failed, "
-                    //                " on proc({}) error({}) error type({}), a "
-                    //                "PELL will be logged",
-                    //                index, sbeError.what(), errType)
-                    //        .c_str());
+                    // log<level::ERR>(
+                    //     std::format("Stop instructions failed, "
+                    //                 " on proc({}) error({}) error type({}), a
+                    //                 " "PELL will be logged", index,
+                    //                 sbeError.what(), errType)
+                    //         .c_str());
                     uint32_t cmd = SBEFIFO_CMD_CLASS_INSTRUCTION |
                                    SBEFIFO_CMD_CONTROL_INSN;
                     // To store additional data about ffdc.

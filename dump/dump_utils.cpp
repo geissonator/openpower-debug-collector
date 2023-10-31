@@ -117,8 +117,8 @@ void requestSBEDump(const uint32_t failingUnit, const uint32_t eid)
     try
     {
         auto service = getService(bus, interface, path);
-        auto method =
-            bus.new_method_call(service.c_str(), path, interface, function);
+        auto method = bus.new_method_call(service.c_str(), path, interface,
+                                          function);
 
         // dbus call arguments
         std::unordered_map<std::string, std::variant<std::string, uint64_t>>
