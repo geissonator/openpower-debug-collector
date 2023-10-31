@@ -9,7 +9,6 @@ extern "C"
 #include <libpdbg_sbe.h>
 }
 
-#include <fmt/format.h>
 #include <libphal.H>
 
 #include <phosphor-logging/log.hpp>
@@ -22,6 +21,8 @@ extern "C"
 
 #include <phosphor-logging/elog.hpp>
 #endif
+
+#include <format>
 
 int main(int argc, char* argv[])
 {
@@ -90,7 +91,7 @@ int main(int argc, char* argv[])
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>(fmt::format("Exception {} occurred", e.what()).c_str());
+        log<level::ERR>(std::format("Exception {} occurred", e.what()).c_str());
         std::string eventType =
             "org.open_power.Host.Boot.Error.WatchdogTimedOut";
         auto ffdc = std::vector<FFDCTuple>{};
